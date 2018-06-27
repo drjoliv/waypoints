@@ -144,8 +144,15 @@ public class WayPoints {
   }
 
   private static int usage() {
-     System.out.println("usage info");
-       //TODO do something here.
+     System.out.println("Usage:  wp [add | rm | list | help] [args] \n");
+
+     System.out.println("Create aliases to ditrectories allowing you to quickly navigate to them.\n");
+
+     System.out.println("  add\tAdd an alias and directory path. \"wp add home ~/\"");
+     System.out.println("  \tChange directory using an alias. \"wp home\"");
+     System.out.println("  rm\tRemove an alias. \t\t \"wp rm home\"");
+     System.out.println("  list\tList all aliases \t\t \"wp list\"");
+     System.out.println("  help\tShow help information \t\t \"wp help\"");
     return 0;
   }
 
@@ -194,6 +201,7 @@ public class WayPoints {
   private static HashMap<String,String> readData() {
     try( ObjectInputStream in =
         new ObjectInputStream(new FileInputStream(dataFile())) ) {
+      @SuppressWarnings("unchecked")
       HashMap<String,String> map = (HashMap<String,String>)in.readObject();
       in.close();
       return map;
