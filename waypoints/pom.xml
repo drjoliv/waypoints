@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>drjoliv.waypoints</groupId>
+  <artifactId>drjoliv-waypoints</artifactId>
+  <version>1.0</version>
+
+  <name>waypoints</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>drjoliv.plugin</groupId>
+        <artifactId>debian-maven-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <!-- required configuration parameters-->
+              <longDecription>An executable used by WayPoints.sh to change/navigate directories quickly. Packageing this code would be the most modular way to use WayPoints.sh.</longDecription>   <!-- Detailed description of the application. -->
+              <shortDecription>Companion package used bu WayPoints.sh.</shortDecription> <!-- Short descriptin of application no more that 60 characters. -->
+              <maintainerEmail>drjoliv@gmail.com</maintainerEmail> <!-- Email of the application maintainer. -->
+              <maintainerName>Desonte Jolivet</maintainerName>   <!-- Name of the application maintainer.-->
+              <mainClass>drjoliv.waypoints.WayPoints</mainClass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

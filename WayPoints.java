@@ -14,12 +14,20 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class WayPoints {
+
+  /**
+   *
+   */
+  public WayPoints() {
+  }
 
   public static void main(String[] args) {
     Command cmd = processArgs(args);
@@ -97,8 +105,22 @@ public class WayPoints {
   private static Command processArgs(String[] args) {
     if(args.length == 0)
       return cmdHlp();
+    else if(args.length == 1) {
+      switch(args[0]) {
+        case "help":
+          return cmdHlp();
+        case "list" :
+          return cmdList();
+        default :
+          return cmdWarp(args[0]);
+      }
+    }
+    else if(args.length == 2 && args[0].equals("rm"))
+      return cmdRm(args[1]);
+    else if(args.length == 3 && args[0].equals("add"))
+      return cmdAdd(args[1],args[2]);
     else
-      return null; //TODO fill this hole.
+      return cmdHlp();
   }
 
   private static int add(String alias, String path) {
@@ -177,14 +199,9 @@ public class WayPoints {
   }
 
   private static String processPath(String path) {
-    if(path.equals("."))
-      return workingDir().getAbsolutePath();
-    else if(path.equals(".."))
-      return workingDir().getParentFile().getAbsolutePath();
-    else 
-      return null;
-  }
-
+      return new File(path).getAbsolutePath();
+    }
+    
   private static boolean writeData(HashMap<String,String> points) {
     try( ObjectOutputStream out =
         new ObjectOutputStream(new FileOutputStream(dataFile(), false)) ) {
@@ -193,7 +210,7 @@ public class WayPoints {
       return true;
     } catch (IOException ex) {
        //TODO deal with these erros or should i pass them on??
-      System.out.println("error writin data");
+      System.out.println(ex.getMessage());
       return false;
     }
   }
