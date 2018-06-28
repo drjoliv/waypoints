@@ -4,21 +4,57 @@ Waypoints allows you to quickly move through directories while in the terminal. 
 
 # Usage
 
+## list
+
+List all the waypoints you have created.
+
 ```
 drjoliv@mango:~/projects/waypoints$ wp list
 way-points: (total 0)
+```
+
+## add
+
+Add a waypoint. the supcommand add takes two arguments, the waypoint name and direcotry(wp add <NAME> <DIRECTORY>).
+
+```
 drjoliv@mango:~/projects/waypoints$ wp add ways .
 creating way-point      ways
 
+drjoliv@mango:~/projects/waypoints$ wp list
+way-points: (total 1)
 ways    /home/drjoliv/projects/waypoints
-drjoliv@mango:~/projects/waypoints$ wp add home ~/
-creating way-point      home
+```
 
-home    /home/drjoliv
-drjoliv@mango:~/projects/waypoints$ wp home
+## warp
+
+Usign a waypoint. No subcommand is need to use a waypoint jsut the name of the waypoint(wp <NAME>).
+
+```
+drjoliv@mango:~/projects/waypoints$ cd ~/
 drjoliv@mango:~$ wp ways
 drjoliv@mango:~/projects/waypoints$ 
 ```
+
+## remove
+
+Remove a way-point. The subcommand rm deletes way-points.(wp rm <NAME>)
+
+```
+drjoliv@mango:~/projects/waypoints$ wp rm ways
+removing way-point:     ways
+drjoliv@mango:~/projects/waypoints$ wp list
+way-points: (total 0)
+drjoliv@mango:~/projects/waypoints$ 
+```
+
+## help
+To print usage information:
+```
+wp help
+``` 
+
+
 
 [![asciicast](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br.png)](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br)
 
