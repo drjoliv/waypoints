@@ -15,7 +15,7 @@ way-points: (total 0)
 
 ## add
 
-Add a waypoint. the supcommand add takes two arguments, the waypoint name and direcotry(wp add <NAME> <DIRECTORY>).
+Add a waypoint. the supcommand add takes two arguments, the waypoint name and direcotry(wp add &lt;NAME&gt; &lt;DIRECTORY&gt;).
 
 ```
 drjoliv@mango:~/projects/waypoints$ wp add ways .
@@ -28,7 +28,7 @@ ways    /home/drjoliv/projects/waypoints
 
 ## warp
 
-Usign a waypoint. No subcommand is need to use a waypoint jsut the name of the waypoint(wp <NAME>).
+Usign a waypoint. No subcommand is need to use a waypoint jsut the name of the waypoint(wp &lt;NAME&gt;).
 
 ```
 drjoliv@mango:~/projects/waypoints$ cd ~/
@@ -38,7 +38,7 @@ drjoliv@mango:~/projects/waypoints$
 
 ## remove
 
-Remove a way-point. The subcommand rm deletes way-points.(wp rm <NAME>)
+Remove a way-point. The subcommand rm deletes way-points.(wp rm &lt;NAME&gt;)
 
 ```
 drjoliv@mango:~/projects/waypoints$ wp rm ways
@@ -58,11 +58,3 @@ wp help
 
 [![asciicast](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br.png)](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br)
 
-# Install
-
-```
-
-```
-
-
-# License
