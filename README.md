@@ -20,7 +20,7 @@ drjoliv@mango:~$ wp ways
 drjoliv@mango:~/projects/waypoints$ 
 ```
 
-[![asciicast](https://asciinema.org/a/Iml3ObIvfJ0d9ZpvC1WAdaOVE.png)](https://asciinema.org/a/Iml3ObIvfJ0d9ZpvC1WAdaOVE)
+[![asciicast](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br.png)](https://asciinema.org/a/MQIt9I7BqQgE4UrmjPOszd9br)
 
 # Install
 
